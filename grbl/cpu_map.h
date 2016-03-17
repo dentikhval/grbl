@@ -40,6 +40,12 @@
 
 #ifdef CPU_MAP_ATMEGA2560_6AXIS // (Arduino Mega 2560 Six Axis) By Denhv
 
+#ifdef GRBL_PLATFORM
+#error "cpu_map already defined: GRBL_PLATFORM=" GRBL_PLATFORM
+#endif
+#define GRBL_PLATFORM "Atmega2650 Six Axis"
+
+
   // Serial port pins
   #define SERIAL_RX USART0_RX_vect
   #define SERIAL_UDRE USART0_UDRE_vect
@@ -142,6 +148,8 @@
   #ifdef VARIABLE_SPINDLE
     // Advanced Configuration Below You should not need to touch these variables
     // Set Timer up to use TIMER2B which is attached to Digital Pin 9
+	  #define PWM_MAX_VALUE       255.0
+
     #define TCCRA_REGISTER		TCCR2A
     #define TCCRB_REGISTER		TCCR2B
     #define OCR_REGISTER		OCR2B
@@ -153,7 +161,7 @@
     #define WAVE3_REGISTER		WGM23
 
     #define SPINDLE_PWM_DDR		DDRH
-    #define SPINDLE_PWM_PORT    PORTH
+    #define SPINDLE_PWM_PORT    PORTH	
     #define SPINDLE_PWM_BIT		6 // MEGA2560 Digital Pin 9 <--- DO NOT TOUCH
 #endif // End of VARIABLE_SPINDLE
 
