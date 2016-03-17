@@ -2,6 +2,11 @@
 
 
 ***
+### GRBL Six Axis Mod!!!
+This is the latest Grbl as of today (0.9j), adapted to Arduino Mega 2560 (custom board with very custom pinout, see cpu_map.h)
+Many modifications have been made, and very many bugs may be present. At least, it compiles in Arduino.
+
+***
 
 Grbl is a no-compromise, high performance, low cost alternative to parallel-port-based motion control for CNC milling. It will run on a vanilla Arduino (Duemillanove/Uno) as long as it sports an Atmega 328. 
 
@@ -20,13 +25,13 @@ Grbl includes full acceleration management with look ahead. That means the contr
 * Lead Developer [_2009 - 2011_]: Simen Svale Skogsrud (Norway). aka The Originator/Creator/Pioneer/Father of Grbl.
 
 ***
-
-### Official Supporters of the Grbl CNC Project
-![Official Supporters](https://dl.dropboxusercontent.com/u/2221997/Contributors.png)
+_**Master Branch:**_
+  - **IMPORTANT INFO WHEN UPGRADING FROM ANYTHING :** 
+  - Baudrate is now **57600** (Up from 115200). 
+  - Three more axis have to be taken into account
 
 ***
-
-_**Master Branch:**_
+_**Master Branch of the Original:**_
 * [Grbl v0.9j Atmega328p 16mhz 115200baud with generic defaults](http://bit.ly/1I8Ey4S) _(2016-03-16)_
   - **IMPORTANT INFO WHEN UPGRADING TO GRBL v0.9 :** 
   - Baudrate is now **115200** (Up from 9600). 
@@ -104,4 +109,4 @@ List of Supported G-Codes in Grbl v0.9 Master:
 -------------
 Grbl is an open-source project and fueled by the free-time of our intrepid administrators and altruistic users. If you'd like to donate, all proceeds will be used to help fund supporting hardware and testing equipment. Thank you!
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CUGXJHXA36BYW)
+[![Donate the original developer](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CUGXJHXA36BYW)
