@@ -126,17 +126,20 @@
 
   // Define user-control pinouts (cycle start, reset, feed hold) input pins.
   // NOTE: All pinouts pins must be on the same port and not on a port with other input pins (limits).
-  #define PINOUT_DDR       DDRB
-  #define PINOUT_PIN       PINB
-  #define PINOUT_PORT      PORTB
-  #define PIN_RESET        4  // MEGA2560 Digital Pin 10
-  #define PIN_FEED_HOLD    5  // MEGA2560 Digital Pin 11
-  #define PIN_CYCLE_START  6  // MEGA2560 Digital Pin 12
-  #define PINOUT_INT       PCIE0  // Pin change interrupt enable pin
-  #define PINOUT_INT_vect  PCINT0_vect
-  #define PINOUT_PCMSK     PCMSK0 // Pin change interrupt register
-  #define PINOUT_MASK ((1<<PIN_RESET)|(1<<PIN_FEED_HOLD)|(1<<PIN_CYCLE_START))
+  #define CONTROL_DDR       DDRB
+  #define CONTROL_PIN       PINB
+  #define CONTROL_PORT      PORTB
+  #define RESET_BIT        4  // MEGA2560 Digital Pin 10
+  #define FEED_HOLD_BIT    5  // MEGA2560 Digital Pin 11
+  #define CYCLE_START_BIT  6  // MEGA2560 Digital Pin 12
+  #define SAFETY_DOOR_BIT  7  // MEGA2560 Digital Pin 13
+  #define CONTROL_INT       PCIE0  // Pin change interrupt enable pin
+  #define CONTROL_INT_vect  PCINT0_vect
+  #define CONTROL_PCMSK     PCMSK0 // Pin change interrupt register
+  #define CONTROL_MASK ((1<<RESET_BIT)|(1<<FEED_HOLD_BIT)|(1<<CYCLE_START_BIT)|(1<<SAFETY_DOOR_BIT))
+  #define CONTROL_INVERT_MASK CONTROL_MASK // May be re-defined to only invert certain control pins.
 
+  
   // Define probe switch input pin.
   #define PROBE_DDR       DDRK
   #define PROBE_PIN       PINK
